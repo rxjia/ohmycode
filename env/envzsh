@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+#set -e
+
+SHELL_FOLDER="$(dirname "$(realpath "${BASH_SOURCE:-$0}")")"
+
+# echo "SHLVL:${SHLVL} ;envzsh" >> ~/shell_debug.log
+# echo "hello zsh - args: $@"
+exec ${SHELL_FOLDER}/zshi "source ${SHELL_FOLDER}/env_vars.sh" "$@"

@@ -1,0 +1,28 @@
+{
+    "terminal.integrated.profiles.linux": {
+        "envzsh": {
+            "path": "/usr/bin/sh",
+            "args": [
+                "${workspaceFolder}/.vscode/env/envzsh"
+            ],
+            // "overrideName": true,
+        },
+    },
+    "terminal.integrated.defaultProfile.linux": "envzsh",
+    "python.defaultInterpreterPath": "${workspaceFolder}/.vscode/env/python",
+    // "files.exclude": {
+    //     "./build": true,
+    //     "./log": true
+    // },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/logs/**": true,
+        "**/lightning_logs/**": true,
+        "**/wandb/**": true,
+        "**/.stfolder/**": true,
+        // "./build": true,
+        // "./log": true
+    },
+}

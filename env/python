@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+SHELL_FOLDER=$(dirname "$(realpath "${BASH_SOURCE:-$0}")")
+
+source ${SHELL_FOLDER}/env_vars.sh
+
+PYBIN_RAW=${PYBIN_RAW-`which python3`}
+
+# remove current dir in path
+str_fmt=$(echo "${SHELL_FOLDER}:"| sed  's/\//\\\//g')
+PATH=$(echo "$PATH" | sed -e 's/'"$str_fmt"'//')
+
+str_fmt=$(echo ":${SHELL_FOLDER}"| sed  's/\//\\\//g')
+PATH=$(echo "$PATH" | sed -e 's/'"$str_fmt"'//')
+
+exec ${PYBIN_RAW} $@
